@@ -7,7 +7,7 @@ class RegisterForm(UserCreationForm):
     
     class Meta:
         model = Pepople
-        fields = ['username', 'email', 'institute', 'group','password1', 'password2']
+        fields = ['username', 'institute', 'group','password1', 'password2']
 
 
 class LoginForm(forms.Form):

@@ -130,4 +130,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-#AUTH_USER_MODEL = 'registration.Pepople'
+AUTH_USER_MODEL = 'registration.Pepople'
