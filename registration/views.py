@@ -24,7 +24,7 @@ def sign_up(request):
         
 from .forms import LoginForm
 
-
+from django.contrib import messages
 def sign_in(request):
     if request.user.is_authenticated:
             return redirect('home')
@@ -36,10 +36,12 @@ def sign_in(request):
         if form.is_valid():
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            user = authenticate(request,username=email,password=password)
+            user = authenticate(request, email=email, password=password)
             if user!=None:
                 login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 return redirect('home')
+            else:
+                messages.success(request, 'Ошибка, проверьте почту и пароль')
         return render(request,'login.html',{'form': form})
     
 def sign_out(request):

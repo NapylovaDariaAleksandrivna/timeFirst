@@ -131,7 +131,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
 AUTH_USER_MODEL = 'registration.Pepople'
 
 SOCIAL_AUTH_POSTGRES_JSONFIELD = True

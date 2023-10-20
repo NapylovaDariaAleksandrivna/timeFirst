@@ -24,8 +24,8 @@ class RegisterForm(UserCreationForm):
 
 class LoginForm(forms.Form):
     email = forms.CharField(max_length=65)
-    password = forms.CharField(max_length=65, widget=forms.PasswordInput)
+    password = forms.CharField(max_length=65)
     def __init__(self, *args, **kwargs):
         super(LoginForm, self).__init__(*args, **kwargs)
-        self.fields['email'].widget = forms.TextInput(attrs={'placeholder': 'Почта'})
+        self.fields['email'].widget = forms.EmailInput(attrs={'placeholder': 'Почта'})
         self.fields['password'].widget = forms.PasswordInput(attrs={ 'placeholder': 'Повторите'})

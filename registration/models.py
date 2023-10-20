@@ -12,5 +12,6 @@ class Pepople(AbstractUser):
     password= models.CharField(max_length=15)
     email = models.EmailField(unique=True)
     flag=models.BooleanField(choices=TRUE_FALSE_CHOICES, default=False)
-
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
 

@@ -31,7 +31,11 @@
     font-size: 28px;
     padding: 5px;
 }
-.error{
-    margin-top: -10px;
-
+form>.error{
+    position: sticky;
+    top: 50%;
+    background-image: url('../img/Фон ошибка.png');
+    z-index: 99999;
+    width: 630px;
+    height: 380px;
 }
