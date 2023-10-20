@@ -1,8 +1,22 @@
-{% extends 'index.html' %}
+{% extends 'Index.html' %}
+{% load static %}
+{% block link %}{% static 'css/HB.css' %}{% endblock %}
+
+{% block title%}Главная{% endblock %}
+
 {% block content %}
-<h1>home</h1>
-<!--  Если не зареган, то не видно!   -->
 {%if request.user.is_authenticated %}
-  		<span>Hi {{ request.user.username | title }}</span>
-{%endif%}
+    <span>Hi {{ request.user.username | title }}</span>
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+    <h2 class="Center">Текст о важном Текст о важном Текст о важном Текст о важном Текст о важномТекст о важном Текст о
+        dажном Текст о важном Текст о важном
+    </h2>
+    <div class="Vawe">
+        <div class="button">
+            <a href="{% url 'register' %}">Регистрация</a>
+            <a href="{% url 'login' %}">Авторизация</a>
+        </div>
+    </div>
+{% endif %}
 {% endblock content%}

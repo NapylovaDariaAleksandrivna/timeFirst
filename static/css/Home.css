@@ -1,0 +1,61 @@
+html{
+    margin: 0;
+}
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+  flex-direction: column;
+}
+.menu{
+    background-image: url('../img/Menu.png');
+    background-repeat: no-repeat;
+    background-size: 100%, cover;
+}
+h2{
+    font-size: 28px;
+    font-style:normal;
+}
+h2.Center{
+    background: linear-gradient(90deg, rgba(242, 171, 34, 0.00) 0%, rgba(255, 201, 51, 0.80) 50%, rgba(242, 171, 34, 0.00) 100%);
+    padding: 20px 120px 20px 120px ;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+}
+.button{
+    
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+.Vawe{
+    
+    margin-top: auto;
+    padding: 25px;
+    background-image: url('../img/Vawe.png');
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: 100%, cover;
+}
+
+.button>button{
+    background: #1E1E1E;
+    color: white;
+    padding: 25px 35px 25px 35px;
+    font-size: 28px;
+    text-align: center;
+}
+footer{
+    background: #1E1E1E;
+    height: 170px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+footer>div>a>img{
+    height: 65px;
+    margin-left: 45px;
+}

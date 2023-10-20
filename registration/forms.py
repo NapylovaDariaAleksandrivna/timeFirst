@@ -7,9 +7,25 @@ class RegisterForm(UserCreationForm):
     
     class Meta:
         model = Pepople
-        fields = ['username', 'institute', 'group','password1', 'password2']
+        fields = ['username', 'email','password1', 'password2']
+        widgets = {
+            'username': forms.TextInput(attrs={'placeholder': 'Фамилия Имя Отчество'}),
+            'email': forms.TextInput(attrs={'placeholder': 'Почта'}),
+            'password1': forms.PasswordInput(attrs={'placeholder': 'Пароль'}),
+            'password2': forms.PasswordInput(attrs={'placeholder': 'Повторите пароль'}),
+        }
+    def __init__(self, *args, **kwargs):
+        super(RegisterForm, self).__init__(*args, **kwargs)
+        self.fields['password1'].widget = forms.PasswordInput(attrs={'placeholder': 'Пароль'})
+        self.fields['password2'].widget = forms.PasswordInput(attrs={ 'placeholder': 'Повторите пароль'})
+    
+
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=65)
+    email = forms.CharField(max_length=65)
     password = forms.CharField(max_length=65, widget=forms.PasswordInput)
+    def __init__(self, *args, **kwargs):
+        super(LoginForm, self).__init__(*args, **kwargs)
+        self.fields['email'].widget = forms.TextInput(attrs={'placeholder': 'Почта'})
+        self.fields['password'].widget = forms.PasswordInput(attrs={ 'placeholder': 'Повторите'})

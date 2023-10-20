@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}">
+    <link rel="stylesheet" href="{% block link%}{% endblock %}">
+    
+    <title>{% block title%}{% endblock %}</title>
+</head>
+
+<body class="menu">
+    <div style="height: 300px;"></div>
+    {% block content%}{% endblock %}
+    
+</body>
+<footer>
+    <div>
+        <a href="https://vk.com/vpnntu_2022" target="_blank">
+            <img src="{% static 'img/VK.png' %}">
+        </a>
+        <a href="https://vk.com/profkomngtu" target="_blank">
+            <img src="{% static 'img/Проф.png' %}">
+        </a>
+        <a href="https://www.nntu.ru/" target="_blank">
+            <img src="{% static 'img/НГТУ.png' %}">
+        </a>
+    </div>
+</footer>
+
+</html>
