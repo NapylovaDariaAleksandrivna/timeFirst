@@ -15,3 +15,8 @@ class Pepople(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
+    def getFlag(self):
+        return self.flag
+    def setFlag(self, f):
+        self.flag=f
+        return

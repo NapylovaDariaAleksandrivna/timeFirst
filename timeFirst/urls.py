@@ -23,5 +23,5 @@ urlpatterns = [
     path('', include('voting.urls')),
     path('', RegV.home, name="home"),
     path('', include('social_django.urls')),
-
+    
 ]

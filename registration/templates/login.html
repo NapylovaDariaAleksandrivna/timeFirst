@@ -4,22 +4,29 @@
 
 {% block title%}Авторизация{% endblock %}
 
+{% block up%}
+{% if messages %}
+<dialog class="error" open="open" id="closeMe" style="margin:0px; padding: 0px;">
+	<form method="dialog" class="error" autocomplete="off">
+		<button class="error">
+			<img src="{% static '/img/Ошибки входа.png' %}" style="object-fit: fill ">
+		</button>
+	</form>
+</dialog>
+{% endif %}
+{% endblock %}
+
 {% block content %}
-<form method="POST" novalidate class="form">
+<form method="POST" novalidate class="form" autocomplete="off">
 	{% csrf_token %}
-	{% if messages %}
-		<div class="error">
-			{% for message in messages %}
-			{{ message }}
-			{% endfor %}
-		</div>
-	{% endif %}
+
 	{% for field in form %}
-		{{field}}
+	{{field}}
 	{% endfor %}
 	<div class="buttons">
 		<input type="submit" value="Вход" class="Reg" />
 		<input type="" value="Вход через ВК" class="VK" />
 	</div>
 </form>
+<div style=" margin-top: auto;"></div>
 {% endblock content%}
