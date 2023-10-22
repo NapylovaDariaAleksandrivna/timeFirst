@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 {% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/Home.css' %}">
     <link rel="stylesheet" href="{% block link%}{% endblock %}">
-    
+
     <title>{% block title%}{% endblock %}</title>
 </head>
+{% block up%}{% endblock %}
 
-<body class="menu">
-    {% block up%}{% endblock %}
-    <div style="height: 300px;"></div>
-    
-    {% block content%}{% endblock %}
-    
+<body>
+    <div></div>
+    <div>
+        <img src="{% static 'img/Menu.png' %}" style="width: 100%; height: auto;"></img>
+        {% block content%}{% endblock %}
+    </div>
+    <div></div>
+
 </body>
 <footer>
     <div>

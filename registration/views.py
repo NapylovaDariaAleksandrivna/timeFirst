@@ -2,14 +2,6 @@ from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth import login, authenticate, logout
 # Create your views here.
-def home (request):
-     if request.user.is_authenticated:
-        if request.user.getFlag():
-            return render(request, 'Last.html')
-        else:
-            return render(request, 'homeAfter.html')
-     else:
-        return render(request, 'homeBefore.html')
 
 def sign_up(request):
     if request.user.is_authenticated:
@@ -29,8 +21,8 @@ def sign_up(request):
             return render(request, 'Reg.html', {'form': form})
         
 from .forms import LoginForm
-
 from django.contrib import messages
+
 def sign_in(request):
     if request.user.is_authenticated:
             return redirect('home')

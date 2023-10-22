@@ -11,13 +11,14 @@ class CandidateTeacher(models.Model):
         
     nominations=models.CharField(max_length=255,choices=N_ns.choices)
     name = models.CharField(max_length=255)
-    foto = models.ImageField(upload_to="users/%Y/%m/%d/", blank=True, null=True, verbose_name="Фотография")
+    foto = models.ImageField(upload_to="Teachers/", blank=True, null=True, verbose_name="Фотография")
     department = models.CharField(max_length=255)
     experience = models.IntegerField()
     about=models.TextField()
     id_T = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     def __str__(self):
         return self.nominations+" - "+self.name
+
 
 class CandidateStudent(models.Model):
     class N_ns(models.TextChoices):
@@ -31,7 +32,7 @@ class CandidateStudent(models.Model):
         
     nominations=models.CharField(max_length=255,choices=N_ns.choices)
     name = models.CharField(max_length=255)
-    foto = models.ImageField(upload_to="users/%Y/%m/%d/", blank=True, null=True, verbose_name="Фотография")
+    foto = models.ImageField(upload_to="Students/", blank=True, null=True)
     institute = models.CharField(max_length=25)
     group = models.CharField(max_length=25)
     about=models.TextField()
