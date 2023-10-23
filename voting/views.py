@@ -8,27 +8,27 @@ def last(request):
             return redirect('last')    
     return redirect('home')
 
-from .models import CandidateStudent, CandidateTeacher
+from .models import CandidateStudent, CandidateTeacher, N_ns
 
 def home (request):
      if request.user.is_authenticated:
         if request.user.getFlag():
             return render(request, 'Last.html')
         else:
-            objT=CandidateTeacher.objects.all()
-            objS=CandidateStudent.objects.all()
+            nominations = N_ns.objects.all()[0]
+            obj=nominations.candidateteacher_set.all()
+            print(obj[1])
             if request.method == 'GET':
                 form = Voiting()
                 return render(request, 'homeAfter.html', 
                               {'form': form,
-                               'objT':objT,
-                               'objS':objS})
+                               'objT':obj})
             if request.method == 'POST':
                 form =Voiting(request.POST)
                 if form.is_valid():
                     return redirect('last')
                 else:
                     messages.success(request, 'Ошибка')
-                    return render(request, 'homeAfter.html', {'form': form},objT,objS)
+                    return render(request, 'homeAfter.html', {'form': form})
      else:
         return render(request, 'homeBefore.html')

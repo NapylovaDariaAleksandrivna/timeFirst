@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 {% load static %}
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,35 +8,11 @@
     <link rel="stylesheet" href="{% static 'css/HA.css' %}">
 
     <title>Главная</title>
+    
+    <img src="{% static 'img/Menu.png' %}" style="width: 100%; height: auto;"></img>
 </head>
-
-
 <body>
-    <img src="{% static 'img/Menu.png' %}" class="menu"></img>
-    <div class="v-menu">
-        <form method="post" class="vertical-menu">
-            Преподаватели
-            <select></select>
-            <select></select>
-            <select></select>
-            <select></select>
-            <select></select>
-            <br><br><br>
-            Студенты
-            <select></select>
-            <select></select>
-            <select></select>
-            <select></select>
-            <select></select>
-            <select></select>
-            <select></select>
-            <br><br><br>
-            <input type="submit" value="Отправить голос" class="" />
-        </form>
-    </div>
-    <div style="display: grid; grid-template-columns: auto 150px 1100px auto">
-        <div></div>
-        <div></div>
+    <div style="display: grid; grid-template-columns: auto">
         <div>
             {% for obj in objT%}
             <div class="teacher">
@@ -47,7 +22,6 @@
                     <p class="info">Кафедра: {{obj.department}}</p>
                     <p class="info">Стаж: {{obj.experience}}</p>
                 </div>
-                <div></div>
                 <p class="about">{{obj.about}}</p>
             </div>
             {%endfor%}
@@ -60,12 +34,10 @@
                     <p class="info">Институт: {{obj.institute}}</p>
                     <p class="info">Группа: {{obj.group}}</p>
                 </div>
-                <div></div>
                 <p class="about">{{obj.about}}</p>
             </div>
             {%endfor%}
         </div>
-        <div></div>
     </div>
 </body>
 <footer>
