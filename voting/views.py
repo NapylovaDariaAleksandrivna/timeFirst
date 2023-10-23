@@ -17,7 +17,8 @@ def home (request):
         else:
             nominations = N_ns.objects.all()[0]
             obj=nominations.candidateteacher_set.all()
-            print(obj[1])
+            nominations = N_ns.objects.all()[1]
+            obj=nominations.candidateteacher_set.all()
             if request.method == 'GET':
                 form = Voiting()
                 return render(request, 'homeAfter.html', 

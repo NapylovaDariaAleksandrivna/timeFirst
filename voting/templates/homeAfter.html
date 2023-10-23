@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% extends 'Index.html' %}
 {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/Home.css' %}">
-    <link rel="stylesheet" href="{% static 'css/HA.css' %}">
+{% block link %}{% static 'css/HA.css' %}{% endblock %}
 
-    <title>Главная</title>
-    
-    <img src="{% static 'img/Menu.png' %}" style="width: 100%; height: auto;"></img>
-</head>
+{% block title%}Главная{% endblock %}
+
+{% block content %}
+
 <body>
     <div style="display: grid; grid-template-columns: auto">
         <div>
             {% for obj in objT%}
             <div class="teacher">
-                <img src="{{ obj.foto.url }}" class="photo">
-                <div>
-                    <p class="name">{{obj.name}}</p>
-                    <p class="info">Кафедра: {{obj.department}}</p>
-                    <p class="info">Стаж: {{obj.experience}}</p>
+                <div class="paint">
+                    <img src="{{ obj.foto.url }}" class="photo">
+                    <div style="margin-top: 15%;">
+                        <p class="name">{{obj.second_name}}</p>
+                        <p class="name">{{obj.first_name}}</p>
+                        <p class="info">Кафедра: {{obj.department}}</p>
+                        <p class="info">Стаж: {{obj.experience}}</p>
+                    </div>
                 </div>
                 <p class="about">{{obj.about}}</p>
             </div>
@@ -29,8 +27,8 @@
             <div class="student">
                 <img src="{{ obj.foto.url }}" class="photo">
                 <div>
-                    <br>
-                    <p class="name">{{obj.name}}</p>
+                    <p class="name">{{obj.second_name}}</p>
+                    <p class="name">{{obj.first_name}}</p>
                     <p class="info">Институт: {{obj.institute}}</p>
                     <p class="info">Группа: {{obj.group}}</p>
                 </div>
@@ -39,20 +37,4 @@
             {%endfor%}
         </div>
     </div>
-</body>
-<footer>
-    <div>
-        <div style=" margin-top: auto;"></div>
-        <a href="https://vk.com/vpnntu_2022" target="_blank">
-            <img src="{% static 'img/VK.png' %}">
-        </a>
-        <a href="https://vk.com/profkomngtu" target="_blank">
-            <img src="{% static 'img/Проф.png' %}">
-        </a>
-        <a href="https://www.nntu.ru/" target="_blank">
-            <img src="{% static 'img/НГТУ.png' %}">
-        </a>
-    </div>
-</footer>
-
-</html>
+    {% endblock content%}

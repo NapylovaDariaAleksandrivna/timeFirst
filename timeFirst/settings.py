@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'registration.apps.RegistrationConfig',
     'voting.apps.VotingConfig',
-    'social_django'
+    'social_django',
 ]
 
 MIDDLEWARE = [

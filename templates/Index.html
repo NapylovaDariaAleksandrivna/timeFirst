@@ -13,13 +13,14 @@
 {% block up%}{% endblock %}
 
 <body>
-    <div></div>
     <div>
         <img src="{% static 'img/Menu.png' %}" style="width: 100%; height: auto;"></img>
-        {% block content%}{% endblock %}
+        <div style="display: grid; grid-template-columns: 15% auto 15%;">
+            <div></div>
+            <div>{% block content%}{% endblock %}</div>
+            <div></div>
+        </div>
     </div>
-    <div></div>
-
 </body>
 <footer>
     <div>

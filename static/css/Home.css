@@ -49,6 +49,8 @@ footer{
     height: 170px;
     width: 100%;
     bottom: 0px;
+    display: flex;
+    align-items: center;
 }
 footer>div>a>img{
     height: 65px;
