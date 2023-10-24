@@ -56,3 +56,6 @@ footer>div>a>img{
     height: 65px;
     margin-left: 45px;
 }
+a{
+    text-decoration: none;
+}

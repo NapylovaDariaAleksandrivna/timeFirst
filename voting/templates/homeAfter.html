@@ -1,15 +1,28 @@
-{% extends 'Index.html' %}
+{% extends 'Index2.html' %}
 {% load static %}
 {% block link %}{% static 'css/HA.css' %}{% endblock %}
 
 {% block title%}Главная{% endblock %}
 
 {% block content %}
+<div class="v-menu">
+    <form method="post" class="vertical-menu">
+        {% for fild in form %}
+            {{fild}}
+        {% endfor %}
+        
+        <br>
+        <input type="submit" value="Отправить голос" class="button-menu" />
+    </form>
+</div>
 
 <body>
     <div style="display: grid; grid-template-columns: auto">
         <div>
-            {% for obj in objT%}
+            {% for n_s in nominationsT %}
+            <h1 class="nomination">Номинация:</h1>
+            <h1 class="nomination">{{n_s.name}}</h1>
+            {% for obj in n_s.candidate %}
             <div class="teacher">
                 <div class="paint">
                     <img src="{{ obj.foto.url }}" class="photo">
@@ -23,18 +36,28 @@
                 <p class="about">{{obj.about}}</p>
             </div>
             {%endfor%}
-            {% for obj in objS%}
+            <img src="{% static 'img/Волна.png' %}" class="vawe">
+            {%endfor%}
+            {% for n_s in nominationsS %}
+            <h1 class="nomination">Номинация:</h1>
+            <h1 class="nomination">{{n_s.name}}</h1>
+            {% for obj in n_s.candidate %}
             <div class="student">
-                <img src="{{ obj.foto.url }}" class="photo">
-                <div>
-                    <p class="name">{{obj.second_name}}</p>
-                    <p class="name">{{obj.first_name}}</p>
-                    <p class="info">Институт: {{obj.institute}}</p>
-                    <p class="info">Группа: {{obj.group}}</p>
+                <div class="paint">
+                    <img src="{{ obj.foto.url }}" class="photo">
+                    <div style="margin-top: 15%;">
+                        <p class="name">{{obj.second_name}}</p>
+                        <p class="name">{{obj.first_name}}</p>
+                        <p class="info">Институт: {{obj.institute}}</p>
+                        <p class="info">Группа: {{obj.group}}</p>
+                    </div>
                 </div>
                 <p class="about">{{obj.about}}</p>
             </div>
             {%endfor%}
+            <img src="{% static 'img/Волна.png' %}" class="vawe">
+            {%endfor%}
+
         </div>
     </div>
     {% endblock content%}
