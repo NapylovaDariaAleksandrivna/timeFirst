@@ -7,10 +7,16 @@
 {% block content %}
 <div class="v-menu">
     <form method="post" class="vertical-menu">
-        {% for fild in form %}
+        <p class="menu-H">Преподаватели</p>
+        {% for fild in formT %}
+        {% csrf_token %}
             {{fild}}
         {% endfor %}
-        
+        <p class="menu-H">Студенты</p>
+        {% for fild in formS %}
+        {% csrf_token %}
+            {{fild}}
+        {% endfor %}
         <br>
         <input type="submit" value="Отправить голос" class="button-menu" />
     </form>

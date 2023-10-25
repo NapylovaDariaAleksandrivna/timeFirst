@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import Voiting
+from .forms import VoitingT, VoitingS
 from django.contrib import messages
 # Create your views here.
 def last(request):
@@ -24,14 +24,16 @@ def home (request):
             for nom in nominations:
                 objS.append({'name': nom.name, 'candidate': nom.candidatestudent_set.all()})
             if request.method == 'GET':
-                form = Voiting()
-                return render(request, 'homeAfter.html', {'form': form, 'nominationsT':objT, 'nominationsS':objS})
+                formT = VoitingT()
+                formS = VoitingS()
+                return render(request, 'homeAfter.html', {'formT': formT, 'formS': formS, 'nominationsT':objT, 'nominationsS':objS})
             if request.method == 'POST':
-                form =Voiting(request.POST)
-                if form.is_valid():
+                formT = VoitingT(request.POST)
+                formS = VoitingS(request.POST)
+                if formT.is_valid() and formS.is_valid():
                     return redirect('last')
                 else:
                     messages.success(request, 'Ошибка')
-                    return render(request, 'homeAfter.html', {'form': form, 'nominationsT':objT, 'nominationsS':objS})
+                    return render(request, 'homeAfter.html', {'formT': formT, 'formS': formS, 'nominationsT':objT, 'nominationsS':objS})
      else:
         return render(request, 'homeBefore.html')
