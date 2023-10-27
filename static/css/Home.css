@@ -1,61 +1,155 @@
-html{
+/* Для всех экранов */
+* {
     margin: 0;
+    padding: 0;
 }
-body{
-    margin: 0;
-    min-height: 100vh;
+
+html,
+body {
+    height: 100%;
 }
-.menu{
-    height: 150px;
+.Block{
+    display: grid; grid-template-columns: 320px auto 15%; width: 100%;
 }
-h2{
+.wrapper {
+    position: relative;
+    min-height: 100%;
+}
+
+.content {
+    padding-bottom: 170px;
+}
+
+h2 {
     font-size: 28px;
-    font-style:normal;
+    font-style: normal;
 }
-h2.Center{
+
+h2.Center {
     background: linear-gradient(90deg, rgba(242, 171, 34, 0.00) 0%, rgba(255, 201, 51, 0.80) 50%, rgba(242, 171, 34, 0.00) 100%);
-    padding: 20px 120px 20px 120px ;
+    padding: 20px 120px 20px 120px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 65%;
 }
-.button{
-    
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 50px;
-    margin-bottom: 150px;
-}
-.Vawe{
-    
-    margin-top: auto;
-    padding: 25px;
-    background-image: url('../img/Vawe.png');
-    height: 200px;
-    background-repeat: no-repeat;
-    background-size: 100%, cover;
-}
 
-.button>button{
-    background: #1E1E1E;
-    color: white;
-    padding: 25px 35px 25px 35px;
-    font-size: 28px;
-    text-align: center;
-}
-footer{
+footer {
     background: #1E1E1E;
     height: 170px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
+}
+.footer {
+    background: #1E1E1E;
+    height: 170px;
     bottom: 0px;
     display: flex;
     align-items: center;
 }
-footer>div>a>img{
+
+footer>div>a>img {
     height: 65px;
-    margin-left: 45px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
-a{
+
+footer>a {
     text-decoration: none;
+}
+
+.window{
+    display: grid;
+    grid-template-columns:
+    12% auto 12%;
+    width: 100%;
+}
+/* Для ширины 1024 пикселей и меньше */
+@media screen and (max-width: 1024px) {
+.Block{
+    display: grid; grid-template-columns: 270px auto 15%; width: 100%;
+}
+
+.content {
+    padding-bottom: 110px;
+}
+
+h2.Center {
+    background: linear-gradient(90deg, rgba(242, 171, 34, 0.00) 0%, rgba(255, 201, 51, 0.80) 50%, rgba(242, 171, 34, 0.00) 100%);
+    padding: 20px 120px 20px 120px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    font-size: 20px;
+    font-style: normal;
+}
+footer {
+    background: #1E1E1E;
+    height: 140px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.footer {
+    background: #1E1E1E;
+    height: 140px;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+footer>div>a>img {
+    height: 65px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.window{
+    display: grid;
+    grid-template-columns:
+    10% auto 10%;
+    width: 100%;
+}
+}
+/* Для ширины 600 пикселей и меньше */
+@media (max-width: 600px) {
+
+    h2.Center {
+        background: linear-gradient(90deg, rgba(242, 171, 34, 0.00) 0%, rgba(255, 201, 51, 0.80) 50%, rgba(242, 171, 34, 0.00) 100%);
+        padding: 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 65%;
+        font-size: 16px;
+        font-style: normal;
+    }
+    footer {
+        background: #1E1E1E;
+        height: 110px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    .footer {
+        background: #1E1E1E;
+        height: 110px;
+        bottom: 0px;
+        display: flex;
+        align-items: center;
+    }
+    footer>div>a>img {
+        height: 35px;
+        padding-right: 12px;
+    padding-left: 12px;
+    }
+    .window{
+        display: grid;
+        grid-template-columns:
+        3% auto 3%;
+        width: 100%;
+    }
 }

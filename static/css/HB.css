@@ -9,23 +9,27 @@ h2.Center{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    width: auto;
+}
+h2.End{
+    margin-top: 50px;
+    font-size: 32px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     width: 65%;
+    margin-bottom: 50px;
 }
 .button{
-    
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 50px;
-    margin-bottom: 150px;
+    justify-content: space-around;
 }
 .Vawe{
-    
-    margin-top: auto;
-    padding: 25px;
+    min-height: 240px;
+    padding: 30px;
     background-image: url('../img/Vawe.png');
-    height: 200px;
     background-repeat: no-repeat;
-    background-size: 100%, cover;
+    background-size: 100% 100%;
 }
 
 .button>a{
@@ -34,7 +38,112 @@ h2.Center{
     padding: 25px 35px 25px 35px;
     font-size: 28px;
     text-align: center;
-}
-a{
+    width: 240px;
     text-decoration: none;
+}
+
+/* Для ширины 1024 пикселей и меньше */
+@media screen and (max-width: 1024px) {
+
+    h2{
+        font-size: 18px;
+        font-style:normal;
+    }
+    h2.Center{
+        background: linear-gradient(90deg, rgba(242, 171, 34, 0.00) 0%, rgba(255, 201, 51, 0.80) 50%, rgba(242, 171, 34, 0.00) 100%);
+        padding: 10px ;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+    h2.End{
+        margin-top: 50px;
+        font-size: 22px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 65%;
+    }
+    .button{
+        
+        display: flex;
+        justify-content: space-around;
+        margin-top: 70px;
+        margin-bottom: auto;    
+    }
+    .Vawe{
+        min-height: 240px;
+        margin-top: 50px;
+        padding: 25px;
+        background-image: url('../img/Vawe.png');        
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .button>a{
+        background-color: black;
+        color: white;
+        padding: 10px;
+        font-size: 22px;
+        text-align: center;
+        width: 200px;
+    }
+    a{
+        text-decoration: none;
+    }
+}
+
+/* Для ширины 600 пикселей и меньше */
+@media (max-width: 600px) {
+
+    h2{
+        font-size: 14px;
+        font-style:normal;
+    }
+    h2.Center{
+        margin-top: 50px;
+        background: linear-gradient(90deg, rgba(242, 171, 34, 0.00) 0%, rgba(255, 201, 51, 0.80) 50%, rgba(242, 171, 34, 0.00) 100%);
+        padding: 5px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+    h2.End{
+        margin-top: 50px;
+        font-size: 18px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 65%;
+    }
+    .button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: auto;
+    }
+    
+    .Vawe{
+        min-height: 130px;
+        max-height: 180px;
+        margin-top: 100px;
+        padding: 25px;
+        background-image: url('../img/Vawe.png');
+        
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .button>a{
+        background-color: black;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+        width: 150px;
+        margin-top:15px;
+        margin-bottom: 15px;
+    }
 }

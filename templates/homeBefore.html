@@ -5,13 +5,15 @@
 {% block title%}Главная{% endblock %}
 
 {% block content %}
-    <h2 class="Center">Текст о важном Текст о важном Текст о важном Текст о важном Текст о важномТекст о важном Текст о
-        dажном Текст о важном Текст о важном
-    </h2>
-    <div class="Vawe">
-        <div class="button">
-            <a href="{% url 'register' %}">Регистрация</a>
-            <a href="{% url 'login' %}">Авторизация</a>
-        </div>
-    </div>
+<h2 class="Center">Текст о важном Текст о важном Текст о важном Текст о важном Текст о важномТекст о важном Текст о
+    dажном Текст о важном Текст о важном
+</h2>
 {% endblock content%}
+{% block endlist %}
+<div class="Vawe">
+<div class="button">
+    <a href="{% url 'register' %}">Регистрация</a>
+    <a href="{% url 'login' %}">Авторизация</a>
+</div>
+</div>
+{% endblock %}

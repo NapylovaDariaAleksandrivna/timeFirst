@@ -5,9 +5,10 @@
 {% block title%}Главная{% endblock %}
 
 {% block content %}
-<div class="button" style="margin: 0px;">
-    <a href="{% url 'register' %}">Регистрация</a>
-    <a href="{% url 'login' %}" style="background-color:#FFC933;">Авторизация</a>
-</div>
-<div class="Vawe"> </div>
+    <h2 class="End">Вы успешно пршли голосование!
+    </h2>
+    <div class="button" style="margin: 0px;">
+        <a href="{% url 'logout' %}">Выйти</a>
+        <a href="{% url 'voiting' %}" style="background-color:#FFC933; color: black;">Посмотреть ответы</a>
+    </div>
 {% endblock content%}

@@ -9,8 +9,8 @@ class RegisterForm(UserCreationForm):
         model = Pepople
         fields = ['username', 'email','password1', 'password2']
         widgets = {
-            'username': forms.TextInput(attrs={'placeholder': 'Фамилия Имя Отчество'}),
-            'email': forms.TextInput(attrs={'placeholder': 'Почта','autocomplete': 'off'}),
+            'email': forms.TextInput(attrs={'placeholder': 'Почта'}),
+            'username': forms.TextInput(attrs={'placeholder': 'Фамилия Имя Отчество','autocomplete': 'off'}),
             'password1': forms.PasswordInput(attrs={'placeholder': 'Пароль','autocomplete': 'off'}),
             'password2': forms.PasswordInput(attrs={'placeholder': 'Повторите пароль','autocomplete': 'off'}),
         }

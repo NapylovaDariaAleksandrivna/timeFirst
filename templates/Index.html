@@ -13,27 +13,31 @@
 {% block up%}{% endblock %}
 
 <body>
-    <div>
-        <img src="{% static 'img/Menu.png' %}" style="width: 100%; height: auto;"></img>
-        <div style="display: grid; grid-template-columns: 15% auto 15%;">
-            <div></div>
-            <div>{% block content%}{% endblock %}</div>
-            <div></div>
+    <div class="wrapper">
+        <div class="content">
+            <img src="{% static 'img/Menu.png' %}" style="width: 100%; height: auto;"></img>
+            <div class="window">
+                <div></div>
+                <div style="margin-bottom: 50px;">{% block content%}{% endblock %}</div>
+                <div></div>
+            </div>
+            {% block endlist %}{% endblock %}
         </div>
+        <footer>
+            <div class="footer">
+                <a href="https://vk.com/vpnntu_2022" target="_blank">
+                    <img src="{% static 'img/VK.png' %}">
+                </a>
+                <a href="https://vk.com/profkomngtu" target="_blank">
+                    <img src="{% static 'img/Проф.png' %}">
+                </a>
+                <a href="https://www.nntu.ru/" target="_blank">
+                    <img src="{% static 'img/НГТУ.png' %}">
+                </a>
+            </div>
+        </footer>
     </div>
 </body>
-<footer>
-    <div>
-        <a href="https://vk.com/vpnntu_2022" target="_blank">
-            <img src="{% static 'img/VK.png' %}">
-        </a>
-        <a href="https://vk.com/profkomngtu" target="_blank">
-            <img src="{% static 'img/Проф.png' %}">
-        </a>
-        <a href="https://www.nntu.ru/" target="_blank">
-            <img src="{% static 'img/НГТУ.png' %}">
-        </a>
-    </div>
-</footer>
+
 
 </html>

@@ -5,22 +5,6 @@
 {% block title%}Главная{% endblock %}
 
 {% block content %}
-<div class="v-menu">
-    <form method="post" class="vertical-menu">
-        <p class="menu-H">Преподаватели</p>
-        {% for fild in formT %}
-        {% csrf_token %}
-            {{fild}}
-        {% endfor %}
-        <p class="menu-H">Студенты</p>
-        {% for fild in formS %}
-        {% csrf_token %}
-            {{fild}}
-        {% endfor %}
-        <br>
-        <input type="submit" value="Отправить голос" class="button-menu" />
-    </form>
-</div>
 
 <body>
     <div style="display: grid; grid-template-columns: auto">
@@ -32,7 +16,7 @@
             <div class="teacher">
                 <div class="paint">
                     <img src="{{ obj.foto.url }}" class="photo">
-                    <div style="margin-top: 15%;">
+                    <div style=" margin-top: auto; margin-bottom: auto;">
                         <p class="name">{{obj.second_name}}</p>
                         <p class="name">{{obj.first_name}}</p>
                         <p class="info">Кафедра: {{obj.department}}</p>
@@ -51,7 +35,7 @@
             <div class="student">
                 <div class="paint">
                     <img src="{{ obj.foto.url }}" class="photo">
-                    <div style="margin-top: 15%;">
+                    <div style=" margin-top: auto; margin-bottom: auto;">
                         <p class="name">{{obj.second_name}}</p>
                         <p class="name">{{obj.first_name}}</p>
                         <p class="info">Институт: {{obj.institute}}</p>
@@ -66,4 +50,35 @@
 
         </div>
     </div>
+    <div id="mySidebar" class="v-menu">
+        <form method="post" class="vertical-menu">
+            <img src="{% static 'img/крест.png' %}" href="javascript:void(0)" class="closebtn" onclick="hide()">
+            <p class="menu-H">Преподаватели</p>
+            {% for fild in formT %}
+            {% csrf_token %}
+            {{fild}}
+            {% endfor %}
+            <p class="menu-H">Студенты</p>
+            {% for fild in formS %}
+            {% csrf_token %}
+            {{fild}}
+            {% endfor %}
+            <br>
+            <input type="submit" value="Отправить голос" class="button-menu" />
+        </form>
+    </div>
+    <div id="content">
+        <img src="{% static 'img/Open.png' %}" class="openbtn" id="openbtn" onclick="show()">
+    </div>
+    <script>
+        function show() {
+            document.getElementById("mySidebar").style.top = "0px";
+            document.getElementById("openbtn").style.left = "-999999px";
+        }
+
+        function hide() {
+            document.getElementById("mySidebar").style.top = "-999999px";
+            document.getElementById("openbtn").style.left = "30px";
+        }
+    </script>
     {% endblock content%}

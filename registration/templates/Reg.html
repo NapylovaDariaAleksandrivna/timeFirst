@@ -8,13 +8,13 @@
 <form method="POST" novalidate class="form" autocomplete="off" >
 	{% csrf_token %}
 	{% for field in form %}
-		{{field}}
-		{% if form.username.errors %}
-			{% for error in field.errors %}
+		{% for error in field.errors %}
 			<p class="error">Ошибка: {{ error }}</p>
-			{% endfor %}
-		{% endif %}
+		{% endfor %}
+		{{field}}
+		
 	{% endfor %}
+	<a href="{% url 'login' %}" class="url">Уже зарегистрироваться?</a>
 	<div class="buttons">
 		<input type="submit" value="Зарегистрироваться" class="Reg"/>
 		<input type="" value="Регистрация через ВК" class="VK"/>

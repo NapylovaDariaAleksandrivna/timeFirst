@@ -5,15 +5,7 @@
 {% block title%}Авторизация{% endblock %}
 
 {% block up%}
-{% if messages %}
-<dialog class="error" open="open" id="closeMe" style="margin:0px; padding: 0px;">
-	<form method="dialog" class="error" autocomplete="off">
-		<button class="error">
-			<img src="{% static '/img/Ошибки входа.png' %}" style="object-fit: fill ">
-		</button>
-	</form>
-</dialog>
-{% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -23,6 +15,7 @@
 	{% for field in form %}
 	{{field}}
 	{% endfor %}
+	<a href="{% url 'register' %}" class="url">Ещё не зарегистрироваться?</a>
 	<div class="buttons">
 		<input type="submit" value="Вход" class="Reg" />
 		<input type="" value="Вход через ВК" class="VK" />

@@ -1,0 +1,25 @@
+{% extends 'Index.html' %}
+{% load static %}
+{% block link %}{% static 'css/V.css' %}{% endblock %}
+
+{% block title%}Главная{% endblock %}
+
+{% block content %}
+
+<body>
+    <div>
+        {% for n_s in obj %}
+        <h1 class="nomination">Ваш выбор в номинации:</h1>
+        <h1 class="nomination">{{n_s.nominations}}</h1>
+        <div class="teacher paint">
+            <img src="{{ n_s.foto.url }}" class="photo">
+            <div style="margin-bottom: 50px;">
+                <p class="name">{{n_s.second_name}}</p>
+                <p class="name">{{n_s.first_name}}</p>
+            </div>
+        </div>
+        <img src="{% static 'img/Волна.png' %}" class="vawe">
+        {% endfor %}
+    </div >
+    <a href="{% url 'logout' %}" class="buttonExit" style="display: block; margin: 50px auto 150px auto;">Выйти</a>
+    {% endblock content%}

@@ -1,0 +1,183 @@
+.teacher, .student{
+    margin-bottom: 125px;
+    margin-top: 25px;
+    display: grid;
+    place-items: center;
+}
+.paint{
+    background-image: url('../img/back st.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70% 100%;
+    align-content: center;
+}
+.photo{
+    width:240px;
+    height:320px;
+    border: 12px solid var(--Linear, #F4D26A);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 25px;
+}
+.name{
+    font-size: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #FFC933;
+}
+.nomination{
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 32px;
+    margin: 0px;
+}
+.vawe{
+    width: 100%;
+    height: auto;
+    margin-top: -100px;
+}
+.buttonExit{
+    text-align: center;
+    width: 300px;
+    font-size: 28px;
+    color: white;
+    padding: 15px 25px 15px 25px;
+    margin: 0px;
+    background-color: #1E1E1E;
+    text-decoration: none;
+}
+@media (max-width: 1024px) {
+    .teacher, .student{
+        margin-bottom: 100px;
+        margin-top: 25px;
+        display: grid;
+        place-items: center;
+    }
+    .paint{
+        background-image: url('../img/back st.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80% 100%;
+        align-content: center;
+    }
+    .photo{
+        width:210px;
+        height:280px;
+        border: 12px solid var(--Linear, #F4D26A);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        margin-bottom: 25px;
+    }
+    .name{
+        font-size: 26px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+        color: #FFC933;
+    }
+    .nomination{
+        text-align: center;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 28px;
+        margin: 0px;
+    }
+    .buttonExit{
+        text-align: center;
+        width: 280px;
+        font-size: 26px;
+        color: white;
+        padding: 15px 25px 15px 25px;
+        margin: 0px;
+        background-color: #1E1E1E;
+        text-decoration: none;
+    }
+}
+@media (max-width: 900px) {
+    .teacher, .student{
+        margin-bottom: 100px;
+        margin-top: 25px;
+        display: grid;
+        place-items: center;
+    }
+    .paint{
+        background-image: url('../img/back st.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80% 100%;
+        align-content: center;
+    }
+    .photo{
+        width:180px;
+        height:240px;
+        border: 10px solid var(--Linear, #F4D26A);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        margin-bottom: 25px;
+    }
+    .name{
+        font-size: 22px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+        color: #FFC933;
+    }
+    .nomination{
+        text-align: center;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 26px;
+        margin: 0px;
+    }
+    .buttonExit{
+        text-align: center;
+        width: 260px;
+        font-size: 24px;
+        color: white;
+        padding: 15px 25px 15px 25px;
+        margin: 0px;
+        background-color: #1E1E1E;
+        text-decoration: none;
+    }
+}
+@media (max-width: 600) {
+    .teacher, .student{
+        margin-bottom: 80px;
+        margin-top: 15px;
+        display: grid;
+        place-items: center;
+    }
+    .paint{
+        background-image: url('../img/back st.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80% 100%;
+        align-content: center;
+    }
+    .photo{
+        width:165px;
+        height:220px;
+        border: 8px solid var(--Linear, #F4D26A);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        margin-bottom: 20px;
+    }
+    .name{
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+        color: #FFC933;
+    }
+    .nomination{
+        text-align: center;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 22px;
+        margin: 0px;
+    }
+    .buttonExit{
+        text-align: center;
+        width: 200px;
+        font-size: 22px;
+        color: white;
+        padding: 15px 25px 15px 25px;
+        margin: 0px;
+        background-color: #1E1E1E;
+        text-decoration: none;
+    }
+}
