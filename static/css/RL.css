@@ -3,8 +3,8 @@
     justify-items: center;
 }
 .error{
-    margin-top: -10px;
-    margin-bottom:15px;
+    margin-top: 15px;
+    margin-bottom:-15px;
     font-size: 22px;
 }
 .form>.buttons{
@@ -49,8 +49,8 @@
 /* Для ширины 1024 пикселей и меньше */
 @media screen and (max-width: 1024px) {
     .error{
-        margin-top: -10px;
-        margin-bottom:15px;
+        margin-top: 15px;
+        margin-bottom:-15px;
         font-size: 22px;
     }
     .form{
@@ -93,8 +93,8 @@
 /* Для ширины 600 пикселей и меньше */
 @media (max-width: 600px) {
     .error{
-        margin-top: -10px;
-        margin-bottom:10px;
+        margin-top: 10px;
+        margin-bottom:-10px;
         font-size: 16px;
     }
     .form{
@@ -144,8 +144,8 @@
 }
 @media (max-width: 900px) {
     .error{
-        margin-top: -10px;
-        margin-bottom:10px;
+        margin-top: 10px;
+        margin-bottom:-10px;
         font-size: 18px;
     }
     .form{

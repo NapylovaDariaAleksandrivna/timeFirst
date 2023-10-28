@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth import login, authenticate, logout
+from .backends import objEB as EmailBackend
 # Create your views here.
 
 def sign_up(request):
@@ -34,7 +35,7 @@ def sign_in(request):
         if form.is_valid():
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            user = authenticate(request, email=email, password=password)
+            user = EmailBackend.authenticate(request, email=email, password=password)
             if user!=None:
                 login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 return redirect('home')

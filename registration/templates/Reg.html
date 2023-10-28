@@ -12,8 +12,8 @@
 			<p class="error">Ошибка: {{ error }}</p>
 		{% endfor %}
 		{{field}}
-		
 	{% endfor %}
+	{{ form.password.errors }}
 	<a href="{% url 'login' %}" class="url">Уже зарегистрироваться?</a>
 	<div class="buttons">
 		<input type="submit" value="Зарегистрироваться" class="Reg"/>

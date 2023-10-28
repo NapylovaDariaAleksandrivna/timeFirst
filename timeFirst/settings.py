@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'registration.apps.RegistrationConfig',
     'voting.apps.VotingConfig',
+    'oauth2_provider',
+    'rest_framework_social_oauth2',
     'social_django',
 ]
 
@@ -131,10 +133,20 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'registration.Pepople'
+AUTHENTICATION_BACKENDS = ['registration.EmailBackend']
+
 
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+
+REST_FRAMEWORK = {
+	'DEFAULT_AUTHENTICATION_CLASSES': [
+		'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+		'rest_framework_social_oauth2.authentication.SocialAuthentication',
+	]
+}
 
 
 SOCIAL_AUTH_POSTGRES_JSONFIELD = True

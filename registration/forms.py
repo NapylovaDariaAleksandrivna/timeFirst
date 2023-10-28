@@ -23,9 +23,12 @@ class RegisterForm(UserCreationForm):
 
 
 class LoginForm(forms.Form):
-    email = forms.CharField(max_length=65)
+    
+    email = forms.EmailField(widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Почта','autocomplete': 'off'}))
     password = forms.CharField(max_length=65)
+    class Meta:
+        model = Pepople
+        fields = ['email', 'password']
     def __init__(self, *args, **kwargs):
         super(LoginForm, self).__init__(*args, **kwargs)
-        self.fields['email'].widget = forms.EmailInput(attrs={'placeholder': 'Почта','autocomplete': 'off'})
-        self.fields['password'].widget = forms.PasswordInput(attrs={ 'placeholder': 'Повторите','autocomplete': 'off'})
+        self.fields['password'].widget = forms.PasswordInput(attrs={ 'placeholder': 'Пароль','autocomplete': 'off'})
