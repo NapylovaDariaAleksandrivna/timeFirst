@@ -22,8 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('registration.urls')),
     path('', include('voting.urls')),
-    path('', include('social_django.urls')),
-    
 ]
 # включаем возможность обработки картинок
 if settings.DEBUG:
