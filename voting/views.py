@@ -72,3 +72,14 @@ def voiting (request):
         return render(request, 'Voiting.html', {'obj':obj})
     else:
         return render(request, 'homeBefore.html')
+    
+
+def for_admin(request):
+    pass
+    # voit = V.objects.all()
+    # obj=[]
+    # i=0
+    # print (voit)
+    # for object in voit:
+    #     for 
+    # return render(request, 'none.html')

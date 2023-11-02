@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth import login, authenticate, logout
+
 from .backends import objEB as EmailBackend
 # Create your views here.
 
