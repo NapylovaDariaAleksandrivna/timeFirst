@@ -1,5 +1,5 @@
 from django import forms
-from .models import N_nsS, N_nsT, V
+from .models import N_nsS, N_nsT, V, N_nsE
 
 class VoitingT(forms.ModelForm):
     nominations = N_nsT.objects.all()
@@ -56,3 +56,20 @@ class VoitingS(forms.ModelForm):
     @staticmethod
     def label_from_instance(obj):
         return obj.second_name
+    
+    
+class VoitingE(forms.ModelForm):
+    nominations = N_nsE.objects.all()
+    obj=[]
+    for i in nominations:
+        obj.append(i.candidateevent_set.all())
+    nomination13=forms.ModelChoiceField(queryset=obj[0], empty_label=nominations[0])
+    class Meta:
+        model=V
+        fields = ['nomination13']
+    def __init__(self, *args, **kwargs):
+        super(VoitingE, self).__init__(*args, **kwargs)
+        self.fields['nomination13'].label_from_instance = self.label_from_instance
+    @staticmethod
+    def label_from_instance(obj):
+        return obj.first_name

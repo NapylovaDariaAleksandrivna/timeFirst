@@ -9,10 +9,10 @@
 <body>
     <div style="display: grid; grid-template-columns: auto">
         <div>
-            {% for n_s in nominationsT %}
+            {% for n_t in nominationsT %}
             <h1 class="nomination">Номинация:</h1>
-            <h1 class="nomination">{{n_s.name}}</h1>
-            {% for obj in n_s.candidate %}
+            <h1 class="nomination">{{n_t.name}}</h1>
+            {% for obj in n_t.candidate %}
             <div class="teacher">
                 <div class="rows">
                     <div></div>
@@ -32,10 +32,10 @@
             {%endfor%}
             <img src="{% static 'img/Волна.png' %}" class="vawe">
             {%endfor%}
+
             {% for n_s in nominationsS %}
             <h1 class="nomination">Номинация:</h1>
             <h1 class="nomination">{{n_s.name}}</h1>
-
             {% for obj in n_s.candidate %}
             <div class="student">
                 <div class="rows">
@@ -57,6 +57,29 @@
             <img src="{% static 'img/Волна.png' %}" class="vawe">
             {%endfor%}
 
+            {% for n_e in nominationsE %}
+            <h1 class="nomination">Номинация:</h1>
+            <h1 class="nomination">{{n_e.name}}</h1>
+            {% for obj in n_e.candidate %}
+            <div class="teacher">
+                <div class="rows">
+                    <div></div>
+                    <div class="paint">
+                        <img src="{{ obj.foto.url }}" class="photo">
+                        <div style=" margin-top: auto; margin-bottom: auto;">
+                            <p class="name">{{obj.first_name}}</p>
+                            <p class="info">Организаторы:</p>
+                            <p class="info">{{obj.organizers}}</p>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+                <p class="about">{{obj.about}}</p>
+            </div>
+            {%endfor%}
+            <img src="{% static 'img/Волна.png' %}" class="vawe">
+            {%endfor%}
+
         </div>
     </div>
     
@@ -71,8 +94,15 @@
             {% csrf_token %}
             {{fild}}
             {% endfor %}
+
             <p class="menu-H">Студенты</p>
             {% for fild in formS %}
+            {% csrf_token %}
+            {{fild}}
+            {% endfor %}
+
+            <p class="menu-H">Мероприятие</p>
+            {% for fild in formE %}
             {% csrf_token %}
             {{fild}}
             {% endfor %}

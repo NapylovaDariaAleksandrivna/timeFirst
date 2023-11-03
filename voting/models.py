@@ -6,25 +6,44 @@ class N_nsT(models.Model):
         n1="Самый стильный",'Самый стильный'
         n2="Самый прогрессивный",'Самый прогрессивный'
         n3="Лучший лектор",'Лучший лектор'
-        n4="Лучший наставник",'Лучший наставник'
+        n4="Наставник года",'Наставник года'
         n5="Преподаватель года",'Преподаватель года'
     name=models.CharField(max_length=255,choices=N_nsС.choices, unique=True)
     def __str__(self):
         return self.name
-    
-
 class N_nsS(models.Model):
     class N_nsС(models.TextChoices):
         n6="Активист года",'Активист года'
         n7="Спортсмен года",'Спортсмен года'
         n8="Изобретатель года",'Изобретатель года'
         n9="Политехник года",'Политехник года'
-        n10="Видео",'Видео'
-        n11="Дизайн",'Дизайн'
-        n12="Фото",'Фото'
+        n10="Техническое искусство. Видео",'Техническое искусство. Видео'
+        n11="Техническое искусство. Дизайн",'Техническое искусство. Дизайн'
+        n12="Техническое искусство. Фото",'Техническое искусство. Фото'
     name=models.CharField(max_length=255,choices=N_nsС.choices, unique=True)
     def __str__(self):
         return self.name
+class N_nsE(models.Model):
+    class N_nsС(models.TextChoices):
+        n13="Мероприятие года",'Мероприятие года'
+    name=models.CharField(max_length=255,choices=N_nsС.choices, unique=True, default="Мероприятие года")
+    def __str__(self):
+        return self.name
+    
+
+class CandidateEvent(models.Model):
+    nominations=models.ForeignKey(N_nsE, on_delete=models.CASCADE)
+    first_name= models.CharField(max_length=255, default="123")
+    second_name=""
+    foto = models.ImageField(upload_to="Event/", blank=True, verbose_name="Фотография", default='default.jpg')
+    organizers = models.CharField(max_length=255)
+    id_E = models.AutoField(primary_key=True)
+    about=models.TextField()
+    def __str__(self):
+        return self.nominations.name+" - "+self.first_name
+    class Meta:
+        db_table = "Мероприятия"
+
 
 class CandidateTeacher(models.Model):
     nominations=models.ForeignKey(N_nsT, on_delete=models.CASCADE)
@@ -69,3 +88,5 @@ class V(models.Model):
     nomination10=models.ForeignKey(CandidateStudent, on_delete=models.CASCADE,related_name='vn10')
     nomination11=models.ForeignKey(CandidateStudent, on_delete=models.CASCADE,related_name='vn11')
     nomination12=models.ForeignKey(CandidateStudent, on_delete=models.CASCADE,related_name='vn12')
+
+    nomination13=models.ForeignKey(CandidateEvent, on_delete=models.CASCADE,related_name='vn13')

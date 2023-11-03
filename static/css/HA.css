@@ -7,7 +7,7 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 100%;
-    font-size: 20px;
+    font-size: 18px;
 }
 .v-menu{
     width: 260px;
@@ -26,17 +26,32 @@
     margin-top: 10px;
     padding:  5px 15px 5px 15px;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
 }
 select{
     font-weight: 300;
     border: none;
     margin: 5px;
     width: 85%;
-    font-size: 20px;
-    height: 35px;
-    padding: 5px;
+    font-size: 16px;
 }
+.openbtn{
+    position:fixed;
+    top: 30px;
+    left: 0px;
+    width: 380px;
+    height: 215px;
+}
+
+.closebtn{
+    text-align: left;
+    color: black;
+    margin-bottom: 15px;
+    margin-right: 85%;
+    height: 30px;
+    width: 30px;
+}
+
 .teacher, .student{
     display: grid;
     grid-template-columns: 65% auto;
@@ -96,54 +111,8 @@ select{
     height: auto;
     margin-top: -100px;
 }
-.openbtn{
-    position:fixed;
-    top: 30px;
-    left: 0px;
-    width: 380px;
-    height: 215px;
-}
-
-.closebtn{
-    text-align: left;
-    color: black;
-    margin-bottom: 25px;
-    margin-right: 220px;
-    height: 40px;
-    width: 40px;
-}
 @media (max-width: 1224px) {
-    .vertical-menu{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content:center;
-        background-image: url('../img/MenuVoiting.png');
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        height: 100%;
-        font-size: 20px;
-    }
-    .v-menu{
-        width: 260px;
-        height: 100%;
-        position:fixed;
-        top: -999999px;
-        left: 0px;
-        z-index: 99999;
-    }
-    .menu-H{
-        margin: -5px;
-    }
-    select{
-        font-weight: 300;
-        border: none;
-        margin: 5px;
-        width: 85%;
-        font-size: 16px;
-        height: 26px;
-        padding: 1px;
-    }
+    
     .rows{
         display: grid;
         grid-template-rows: auto;
@@ -221,39 +190,7 @@ select{
 }
 /* Для ширины 1024 пикселей и меньше */
 @media screen and (max-width: 1024px) {
-    .vertical-menu{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content:center;
-        background-image: url('../img/MenuVoiting.png');
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        height: 100%;
-        font-size: 20px;
-    }
-    .v-menu{
-        width: 260px;
-        height: 100%;
-        position:fixed;
-        top: -999999px;
-        left: 0px;
-        z-index: 99999;
-    }
-    .menu-H{
-        margin: -5px;
-    }
     
-    select{
-        font-weight: 300;
-        border: none;
-        margin: 5px;
-        width: 85%;
-        font-size: 16px;
-        height: 26px;
-        padding: 1px;
-    }
-   
     .teacher, .student{
         display: grid;
         grid-template-columns: auto;
@@ -345,8 +282,6 @@ select{
         margin: 5px;
         width: 85%;
         font-size: 14px;
-        height: 30px;
-        padding: 5px;
     }
     
     .closebtn{
@@ -359,6 +294,7 @@ select{
     }
 }
 @media screen and(max-width: 750px) {
+
     .Block{
         display: grid; grid-template-columns: 210px auto 10%; width: 100%;
     }
@@ -382,9 +318,6 @@ select{
     
 }
 @media (max-width: 700px) {
-    .Block{
-        display: grid; grid-template-columns: 2% auto 2%; width: 100%;
-    }
     .vertical-menu{
         display: flex;
         flex-direction: column;
@@ -394,7 +327,7 @@ select{
         background-size: 100% 100%;
         background-repeat: no-repeat;
         height: 100%;
-        font-size: 24px;
+        font-size: 18px;
     }
     .v-menu{
         width: 100%;
@@ -407,14 +340,25 @@ select{
     .menu-H{
         margin: -5px;
     }
-    
+    .button-menu{
+        background-color: #1e1e1e;
+        color: white;
+        margin-top: 10px;
+        padding:  5px 15px 5px 15px;
+        border: none;
+        font-size: 18px;
+    }
     select{
         font-weight: 300;
         border: none;
         margin: 5px;
         width: 85%;
-        font-size: 20px;
-        padding: 1px;
+        font-size: 16px;
+        height: 27px;
+    }
+
+    .Block{
+        display: grid; grid-template-columns: 2% auto 2%; width: 100%;
     }
     
     .teacher, .student{
@@ -475,7 +419,7 @@ select{
         position:fixed;
         top: 80%;
         width: 90%;
-        height: 180px;
+        height: 24%;
         right: auto;
         left: auto;
     }
