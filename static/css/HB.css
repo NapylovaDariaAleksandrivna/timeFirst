@@ -23,6 +23,7 @@ h2.End{
 .button{
     display: flex;
     justify-content: space-around;
+    font-weight: 300;
 }
 .Vawe{
     min-height: 240px;
@@ -33,6 +34,7 @@ h2.End{
 }
 
 .button>a{
+    font-weight: 300;    
     background-color: black;
     color: white;
     padding: 25px 35px 25px 35px;
@@ -82,6 +84,7 @@ h2.End{
     }
     
     .button>a{
+        font-weight: 300;
         background-color: black;
         color: white;
         padding: 10px;
@@ -137,6 +140,7 @@ h2.End{
     }
     
     .button>a{
+        font-weight: 300;
         background-color: black;
         color: white;
         padding: 10px;

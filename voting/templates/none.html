@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    table {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid #dddddd;
+	border-collapse: collapse; 
+    }
+    th {
+        font-weight: bold;
+        padding: 5px;
+        background: #efefef;
+        border: 1px solid #dddddd;
+    }
+    td {
+        border: 1px solid #dddddd;
+        padding: 5px;
+    }
+    </style>
 </head>
 <body>
-    
+    <table style="width: 100%;">
+        <tr><th>Номинация</th><th>ФИО</th><th>Голоса</th></tr>
+        {% for key, value in form.items  %}
+            <tr>
+                {% for i in value %}
+                <th style="font-weight: 300px;">{{i}}</th>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>

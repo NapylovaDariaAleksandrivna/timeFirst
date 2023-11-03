@@ -7,10 +7,10 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 100%;
-    font-size: 24px;
+    font-size: 20px;
 }
 .v-menu{
-    width: 300px;
+    width: 260px;
     height: 100%;
     position:fixed;
     top: -999999px;
@@ -18,30 +18,34 @@
     z-index: 99999;
 }
 .menu-H{
-    margin: 0px;
+    margin: -5px;
 }
 .button-menu{
-    padding: 15px 25px 15px 25px;
+    background-color: #1e1e1e;
+    color: white;
+    margin-top: 10px;
+    padding:  5px 15px 5px 15px;
     border: none;
-    font-size: 22px;
-    border-radius: 30px;
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-size: 20px;
 }
 select{
+    font-weight: 300;
     border: none;
     margin: 5px;
     width: 85%;
     font-size: 20px;
-    height: auto;
+    height: 35px;
     padding: 5px;
 }
-
 .teacher, .student{
     display: grid;
     grid-template-columns: 65% auto;
     margin-bottom: 125px;
     margin-top: 25px;
+}
+.rows{
+    display: grid;
+    grid-template-rows: 25% auto 25%;
 }
 .paint{
     display: grid;
@@ -61,6 +65,7 @@ select{
     margin-left: 30px;
 }
 .about{
+    font-weight: 300;
     font-size: 20px;
     display: flex;
     align-items: center;
@@ -71,8 +76,10 @@ select{
     font-size: 26px;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-weight: 300px;
 }
 .info{
+    font-weight: 300;
     margin: 5px;
     font-size: 22px;
     color: white;
@@ -82,6 +89,7 @@ select{
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 32px;
     margin: 0px;
+    font-weight: 300px;
 }
 .vawe{
     width: 100%;
@@ -125,22 +133,21 @@ select{
         z-index: 99999;
     }
     .menu-H{
-        margin: 0px;
-    }
-    .button-menu{
-        padding: 15px;
-        border: none;
-        font-size: 20px;
+        margin: -5px;
     }
     select{
+        font-weight: 300;
         border: none;
         margin: 5px;
         width: 85%;
         font-size: 16px;
-        height: 30px;
-        padding: 5px;
+        height: 26px;
+        padding: 1px;
     }
-   
+    .rows{
+        display: grid;
+        grid-template-rows: auto;
+    }
     .teacher, .student{
         display: grid;
         grid-template-columns: auto;
@@ -165,6 +172,7 @@ select{
         margin-left: 10px;
     }
     .about{
+        font-weight: 300;
         font-size: 16px;
         display: flex;
         align-items: center;
@@ -178,6 +186,7 @@ select{
         margin-bottom: 5px;
     }
     .info{
+        font-weight: 300;
         margin: 5px;
         font-size: 18px;
         color: white;
@@ -204,10 +213,10 @@ select{
     .closebtn{
         text-align: left;
         color: black;
-        margin-bottom: 25px;
-        margin-right: 150px;
-        height: 40px;
-        width: 40px;
+        margin-bottom: 5px;
+        margin-right: 170px;
+        height: 35px;
+        width: 35px;
     }
 }
 /* Для ширины 1024 пикселей и меньше */
@@ -232,20 +241,17 @@ select{
         z-index: 99999;
     }
     .menu-H{
-        margin: 0px;
+        margin: -5px;
     }
-    .button-menu{
-        padding: 15px;
-        border: none;
-        font-size: 20px;
-    }
+    
     select{
+        font-weight: 300;
         border: none;
         margin: 5px;
         width: 85%;
         font-size: 16px;
-        height: 30px;
-        padding: 5px;
+        height: 26px;
+        padding: 1px;
     }
    
     .teacher, .student{
@@ -272,6 +278,7 @@ select{
         margin-left: 20px;
     }
     .about{
+        font-weight: 300;
         font-size: 16px;
         display: flex;
         align-items: center;
@@ -283,8 +290,10 @@ select{
         font-size: 20px;
         margin-top: 5px;
         margin-bottom: 5px;
+        font-weight: 300px;
     }
     .info{
+        font-weight: 300;
         margin: 5px;
         font-size: 18px;
         color: white;
@@ -294,6 +303,7 @@ select{
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         font-size: 26px;
         margin: 0px;
+        font-weight: 300px;
     }
     .vawe{
         width: 100%;
@@ -330,6 +340,7 @@ select{
         z-index: 99999;
     }
     select{
+        font-weight: 300;
         border: none;
         margin: 5px;
         width: 85%;
@@ -337,11 +348,7 @@ select{
         height: 30px;
         padding: 5px;
     }
-    .button-menu{
-        padding: 10px;
-        border: none;
-        font-size: 18px;
-    }
+    
     .closebtn{
         text-align: left;
         color: black;
@@ -364,6 +371,7 @@ select{
         z-index: 99999;
     }
     select{
+        font-weight: 300;
         border: none;
         margin: 5px;
         width: 85%;
@@ -371,15 +379,11 @@ select{
         height: 30px;
         padding: 5px;
     }
-    .button-menu{
-        padding: 10px;
-        border: none;
-        font-size: 18px;
-    }
+    
 }
 @media (max-width: 700px) {
     .Block{
-        display: grid; grid-template-columns: 5% auto 5%; width: 100%;
+        display: grid; grid-template-columns: 2% auto 2%; width: 100%;
     }
     .vertical-menu{
         display: flex;
@@ -401,24 +405,16 @@ select{
         z-index: 99999;
     }
     .menu-H{
-        margin: 0px;
-        margin-top: 25px;
+        margin: -5px;
     }
-    .button-menu{
-        padding: 15px 25px 15px 25px;
-        border: none;
-        font-size: 22px;
-        border-radius: 30px;
-        background: #FFF;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    }
+    
     select{
+        font-weight: 300;
         border: none;
         margin: 5px;
         width: 85%;
         font-size: 20px;
-        height: auto;
-        padding: 5px;
+        padding: 1px;
     }
     
     .teacher, .student{
@@ -444,7 +440,8 @@ select{
         margin-left: 30px;
     }
     .about{
-        font-size: 20px;
+        font-weight: 300;
+        font-size: 14px;
         display: flex;
         align-items: center;
         margin-left: 14px;
@@ -454,8 +451,10 @@ select{
         font-size: 16px;
         margin-top: 5px;
         margin-bottom: 5px;
+        font-weight: 300px;
     }
     .info{
+        font-weight: 300;
         margin: 5px;
         font-size: 14px;
         color: white;
@@ -465,6 +464,7 @@ select{
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         font-size: 22px;
         margin: 0px;
+        font-weight: 300px;
     }
     .vawe{
         width: 100%;
@@ -474,11 +474,14 @@ select{
     .openbtn{
         position:fixed;
         top: 80%;
-        left: 30px;
-        width: 380px;
-        height: 215px;
+        width: 90%;
+        height: 180px;
+        right: auto;
+        left: auto;
     }
-    
+    .contentOpen{
+        left: 10px;
+    }
     .closebtn{
         text-align: left;
         color: black;

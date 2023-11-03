@@ -73,13 +73,33 @@ def voiting (request):
     else:
         return render(request, 'homeBefore.html')
     
-
+from django.forms.models import model_to_dict
 def for_admin(request):
-    pass
-    # voit = V.objects.all()
-    # obj=[]
-    # i=0
-    # print (voit)
-    # for object in voit:
-    #     for 
-    # return render(request, 'none.html')
+    if request.user.is_superuser:
+        voit = V.objects.all()
+        form=[]
+        dictionary={}
+        for object in voit:
+            i=0
+            for pole in object.__dict__:
+                if (i>1):
+                    if (i<7):
+                        people= (CandidateTeacher.objects.get(pk=object.__dict__[pole]))
+                        nom=N_nsT.objects.get(pk=people.__dict__['nominations_id'])
+                    else:
+                        people= (CandidateStudent.objects.get(pk=object.__dict__[pole]))
+                        nom=N_nsS.objects.get(pk=people.__dict__['nominations_id'])
+
+
+                    peopleNom=model_to_dict(nom)['name']
+                    peopleName=model_to_dict(people)['first_name']+" "+model_to_dict(people)['second_name']
+                    pCopy=peopleName+" - "+peopleNom
+                    if pCopy in dictionary:
+                        dictionary[pCopy][2]+=1
+                    else:
+                        dictionary[pCopy]=[peopleNom,peopleName, 1]
+                                    
+                    
+                i+=1
+        return render(request, 'none.html', {'form': dictionary})
+    return redirect('home')
