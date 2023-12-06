@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-n#p68=olh4y^jst%&5pl+y81p@d^!!as@p&ac!q=p$-p9ws!=j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ["voting.gigachad.ru"]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://voting.gigachad.ru",
+]
 
 
 # Application definition

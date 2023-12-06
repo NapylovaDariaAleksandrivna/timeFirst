@@ -294,6 +294,9 @@ select{
         height: 35px;
         width: 35px;
     }
+    .paint{
+        padding-left: 0px;
+    }
 }
 @media screen and(max-width: 750px) {
 
@@ -318,6 +321,9 @@ select{
         padding: 5px;
     }
     
+    .paint{
+        padding-left: 0px;
+    }
 }
 @media (max-width: 700px) {
     .vertical-menu{
@@ -376,6 +382,7 @@ select{
         background-position: center;
         background-size: 100% 100%;
         align-content: center;
+        padding-left: 0px;
     }
     .photo{
         width:150px;
@@ -394,7 +401,7 @@ select{
     }
     .name{
         color: #FFC933;
-        font-size: 16px;
+        font-size: 14px;
         margin-top: 5px;
         margin-bottom: 5px;
         font-weight: 300px;
@@ -450,12 +457,13 @@ select{
     }
     .paint{
         display: grid;
-        grid-template-columns: 180px auto;
+        grid-template-columns: 165px auto;
         background-image: url('../img/back st.png');
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100% 100%;
         align-content: center;
+        
     }
     .photo{
         width:120px;
